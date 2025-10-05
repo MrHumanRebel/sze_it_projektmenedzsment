@@ -1,3 +1,61 @@
 %----------------------------------------------------------------------------
 \chapter{\riskproblem}
 %---------------------------------------------------------------------------- 
+
+A \textbf{TeDeRMS} projekt során a kockázatkezelés kulcsfontosságú szerepet játszott, 
+mivel a projekt önálló fejlesztésként valósult meg, így minden döntés és probléma gyors és hatékony kezelést igényelt. 
+A kockázatkezelés célja a potenciális problémák előrejelzése, azok hatásának minimalizálása, 
+valamint a projekt sikerének biztosítása volt.
+
+%----------------------------------------------------------------------------
+\section{Felmerült problémák}
+%----------------------------------------------------------------------------
+
+A fejlesztés során több jelentősebb kihívás merült fel:
+\begin{itemize}
+    \item \textbf{Technológiai problémák:} a rendszer stabilitása és a Docker-konténerek konfigurációja kezdetben nem volt optimális, ami futtatási hibákat okozott.
+    \item \textbf{Funkcionális kihívások:} a bérléskezelési folyamatok pontos leképezése a szoftverben nehézkes volt, különösen a különböző státuszok és jogosultságok kezelése.
+    \item \textbf{Időmenedzsment:} mivel a projektet önállóan végeztem, a napi munka és a projekt előrehaladása közötti egyensúly fenntartása komoly kihívást jelentett.
+    \item \textbf{Tesztelés és hibajavítás:} a rendszer moduláris felépítése miatt a hibák lokalizálása és javítása több iterációt igényelt.
+\end{itemize}
+
+%----------------------------------------------------------------------------
+\section{Kockázatok azonosítása és priorizálása}
+%----------------------------------------------------------------------------
+
+A projekt elején egy \textbf{kockázatmátrixot} készítettem, amely segített azonosítani a legkritikusabb problémákat:
+
+\begin{itemize}
+    \item \textbf{Magas prioritású kockázatok:} kritikus hibák a backend működésében, adatvesztés, biztonsági hiányosságok.
+    \item \textbf{Közepes prioritású kockázatok:} kisebb felhasználói felületbeli problémák, riportálási hibák.
+    \item \textbf{Alacsony prioritású kockázatok:} kisebb esztétikai hibák vagy későbbi bővítési igények.
+\end{itemize}
+
+A priorizálás lehetővé tette, hogy a projekt során először a legkritikusabb problémákra koncentráljak, 
+így a rendszer stabilitása és funkcionalitása biztosított volt.
+
+%----------------------------------------------------------------------------
+\section{Megoldási stratégiák}
+%----------------------------------------------------------------------------
+
+A felmerült problémákra a következő stratégiákat alkalmaztam:
+\begin{itemize}
+    \item \textbf{Technológiai problémák kezelése:} a Docker-konfiguráció és a PHP/Twig környezet iteratív finomhangolása, rendszeres teszteléssel.
+    \item \textbf{Funkcionális kihívások kezelése:} a bérléskezelési modulok folyamatos tesztelése és a logika iteratív javítása a hibák kiküszöbölésére.
+    \item \textbf{Időmenedzsment:} napi és heti ütemtervek készítése, a feladatok priorizálása a projekt előrehaladása érdekében.
+    \item \textbf{Tesztelés és hibajavítás:} moduláris tesztelési stratégia alkalmazása, ahol minden modul külön ellenőrzésen esett át, majd a teljes rendszer integrációját is teszteltem.
+\end{itemize}
+
+%----------------------------------------------------------------------------
+\section{Tanulságok a kockázatkezelésből}
+%----------------------------------------------------------------------------
+
+A projekt során szerzett tapasztalatok alapján a kockázatkezelés kulcsfontosságú az önálló fejlesztésekben:
+\begin{itemize}
+    \item A problémák előrejelzése és a priorizálás jelentősen növeli a projekt sikerességét.
+    \item A rendszeres tesztelés és dokumentáció minimalizálja a hibák előfordulását és gyorsítja a hibajavítást.
+    \item Az időmenedzsment és a feladatpriorizálás elengedhetetlen a projekt gördülékeny előrehaladásához.
+\end{itemize}
+
+Összességében a tudatos kockázatkezelés és a gyors problémamegoldás 
+jelentősen hozzájárult a \textbf{TeDeRMS} sikeres elkészítéséhez és stabil működéséhez.

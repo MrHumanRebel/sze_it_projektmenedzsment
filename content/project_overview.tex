@@ -1,3 +1,64 @@
 %----------------------------------------------------------------------------
 \chapter{\projectoverview}
 %----------------------------------------------------------------------------
+\section{A vállalat és az üzleti igények}
+
+A projekt célja a \textbf{TéDé Rendezvények} vállalat bérlés és projektkezelési folyamatainak teljes digitalizálása volt. 
+A korábbi papíralapú és Excel-alapú folyamatok nem feleltek meg a vállalat növekvő igényeinek,
+és egy modern, integrált rendszer kialakítása vált szükségessé. Az online elérhető üzenetküldő és felhő alapú megoldások
+nem kínáltak megfelelő rugalmasságot és testreszabhatóságot, ezért egy egyedi fejlesztésű rendszer mellett született döntés.
+
+A vállalat számára kiemelten fontos volt egy egységes, modern és felhasználóbarát rendszer, amely:
+\begin{itemize}
+    \item automatizálja a bérlési folyamatokat,
+    \item nyomon követi a készleteket,
+    \item biztosítja az adminisztráció teljes körű kezelését,
+    \item egyszerűsíti a munkafolyamatokat,
+    \item csökkenti a hibalehetőségeket,
+    \item javítja a kommunikációt a csapaton belül,
+    \item egységesíti a dokumentációt,
+    \item minden információ egy helyen elérhető,
+    \item lehetővé teszi a gyors árajánlatkészítést.
+\end{itemize}
+
+%----------------------------------------------------------------------------
+\section{A projekt célkitűzései}
+%----------------------------------------------------------------------------
+
+További célok voltak:
+\begin{itemize}
+    \item modern, felhasználóbarát felület
+    \item egyszerűen telepíthető és skálázható \textbf{Docker} segítségével
+    \item könnyen karbantartható és bővíthető architektúra
+    \item biztonságos hozzáférés-kezelés és jogosultságok
+    \item részletes riportálási és statisztikai funkciók
+\end{itemize}
+
+%----------------------------------------------------------------------------
+\section{A projekt összetettsége és kihívásai}
+%----------------------------------------------------------------------------
+
+A projekt felettébb összetettnek tekinthető, mivel:
+\begin{itemize}
+    \item többféle felhasználói szerepkört kellett kezelnie (admin, munkatárs, menedzser),
+    \item integrálni kellett különböző adatforrásokat és a bérlési folyamatokat,
+    \item biztonsági és hozzáférés-kezelési követelményeknek kellett megfelelnie,
+    \item a fejlesztés során több technológiát kellett összehangolni a rugalmasság és megbízhatóság érdekében.
+\end{itemize}
+
+%----------------------------------------------------------------------------
+\section{Technológiai háttér}
+%----------------------------------------------------------------------------
+
+A rendszer fejlesztése a következő technológiákra épült:
+\begin{itemize}
+    \item \textbf{Backend:} PHP a \textbf{Twig} sablonmotorral,
+    \item \textbf{Frontend:} modern responsive felhasználói felület Twig sablonokkal,
+    \item \textbf{Konténerizálás és telepítés:} Docker és Docker Compose, előre elkészített konténerekben,
+    \item \textbf{Konfiguráció:} testreszabható \texttt{.env} fájlok segítségével.
+    \item \textbf{Reverse proxy:} Nginx a kérések kezelésére és a statikus fájlok kiszolgálására,
+    \item \textbf{Adatbázis:} MySQL a megbízható adatkezelés érdekében,
+    \item \textbf{Verziókezelés:} Git a kód nyomon követésére és együttműködésre.
+\end{itemize}
+
+Ez a technológiai kombináció biztosítja a rendszer gyors telepítését, stabil működését és könnyű bővíthetőségét.
