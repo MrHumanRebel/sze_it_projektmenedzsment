@@ -22,7 +22,7 @@ problémák jellegét, de a gyakorlatban gyakran szükség van rugalmasságra é
 
 Ez a probléma rámutatott arra, hogy a modern szoftverfejlesztési környezetekben a technológiai infrastruktúra 
 optimalizálása legalább olyan fontos, mint a szoftver logikájának megtervezése. 
-A magyar szakirodalom hangsúlyozza, hogy a stabil technológiai alap kritikus a rendszer megbízhatósága szempontjából, 
+A stabil technológiai alap kritikus a rendszer megbízhatósága szempontjából, 
 és a kezdeti hibák megfelelő dokumentációval és iteratív konfigurálással kezelhetők \cite{Kovacs2016,Kaposi2019}. 
 Saját tapasztalatom szerint az ilyen problémák korai felismerése jelentősen csökkentette a későbbi üzemeltetési nehézségeket.
 
@@ -31,9 +31,9 @@ Saját tapasztalatom szerint az ilyen problémák korai felismerése jelentősen
 \end{itemize}
 
 A funkcionalitás pontos implementálása során szembesültem azzal, hogy a vállalati folyamatok összetettsége 
-gyakran túlmutat a papíron megadott szabályokon. A szakirodalom szerint a rendszertervezés során a folyamatok 
+gyakran túlmutat a papíron megadott szabályokon. A rendszertervezés során a folyamatok 
 részletes feltérképezése és a valós működés elemzése elengedhetetlen a hibák minimalizálásához \cite{Szalay2018,Hajdu2014}. 
-Saját értékelésem szerint a moduláris architektúra bevezetése és a folyamatok iteratív tesztelése kulcsfontosságú volt a pontos implementáció eléréséhez.
+Megfigyeléseim alapján a moduláris architektúra bevezetése és a folyamatok iteratív tesztelése kulcsfontosságú volt a pontos implementáció eléréséhez.
 
 \begin{itemize}
     \item \textbf{Időmenedzsment:} a projekt önálló végzése miatt a napi munka és a projekt előrehaladása 
@@ -41,24 +41,19 @@ Saját értékelésem szerint a moduláris architektúra bevezetése és a folya
 \end{itemize}
 
 Az időmenedzsment kérdése kiemelten fontos volt, mivel a korlátozott erőforrások és a napi feladatok összehangolása 
-folyamatos priorizálást igényelt. A hazai szakirodalom rámutat, hogy a projekt időbeli koordinációja, 
+folyamatos priorizálást igényelt. A projekt időbeli koordinációja, 
 a mérföldkövek betartása és a személyes produktivitás optimalizálása kritikus tényezők az önálló fejlesztések során \cite{Kaposi2019,Kovacs2016}. 
-Saját tapasztalatom alapján a heti tervezés és a feladatok rendszeres felülvizsgálata segített a haladás fenntartásában.
+Értékelésem alapján a heti tervezés és a feladatok rendszeres felülvizsgálata segített a haladás fenntartásában.
 
 \begin{itemize}
     \item \textbf{Tesztelés és hibajavítás:} a rendszer moduláris felépítése miatt a hibák lokalizálása és javítása több iterációt igényelt.
 \end{itemize}
 
 A hibák azonosítása és javítása a moduláris felépítés miatt komplex feladat volt, mivel egy-egy modul problémája 
-láncreakcióként hatott a rendszer más részeire. A szakirodalom kiemeli, hogy a folyamatos unit- és integrációs 
+láncreakcióként hatott a rendszer más részeire. A folyamatos unit- és integrációs 
 tesztelés, valamint a hibák dokumentálása és visszacsatolása alapvető a projekt stabilitása szempontjából \cite{Hajdu2014,Szalay2018}. 
-Saját megfigyelésem szerint az iteratív hibajavítás és a részletes tesztelési protokollok alkalmazása lehetővé 
+Személyes véleményem szerint az iteratív hibajavítás és a részletes tesztelési protokollok alkalmazása lehetővé 
 tette a moduláris rendszer hatékony működését, miközben a tanult módszerek későbbi projektekben is alkalmazhatók.
-
-Összességében a felmerült problémák rávilágítottak arra, hogy az önálló fejlesztés során a technológiai, 
-funkcionális és menedzsment kihívások integrált kezelése kulcsfontosságú, és a magyar szakirodalom által 
-javasolt módszertani eszközök alkalmazása jelentősen növelte a projekt sikerességét és a rendszer minőségét.
-
 
 %----------------------------------------------------------------------------
 \section{Kockázatok azonosítása és priorizálása}
@@ -66,7 +61,7 @@ javasolt módszertani eszközök alkalmazása jelentősen növelte a projekt sik
 
 A projekt kezdeti fázisában kiemelten fontos volt a potenciális problémák előrejelzése és kezelése, 
 mivel a kockázatok megfelelő azonosítása és priorizálása közvetlen hatással van a projekt sikerére 
-és a rendszer minőségére. A szakirodalom szerint a kockázatmenedzsment alapja a kockázatok strukturált feltérképezése, 
+és a rendszer minőségére. A kockázatmenedzsment alapja a kockázatok strukturált feltérképezése, 
 az értékelésük és a megfelelő megelőző intézkedések kialakítása \cite{Hajdu2014,Szalay2018,Kovacs2016}.
 
 A projekt során egy \textbf{kockázatmátrix} került kialakításra, amely azonosította a legkritikusabb problémákat és segítette a megfelelő prioritások meghatározását:
@@ -76,7 +71,7 @@ A projekt során egy \textbf{kockázatmátrix} került kialakításra, amely azo
 \end{itemize}
 
 Ezek a kockázatok a rendszer alapvető működését fenyegették, ezért azonnali figyelmet igényeltek. 
-A magyar szakirodalom hangsúlyozza, hogy a magas prioritású problémák kezelése kulcsfontosságú a 
+A magas prioritású problémák kezelése kulcsfontosságú a 
 rendszer stabilitásának és megbízhatóságának biztosításához \cite{Kaposi2019,Szalay2018}. Saját tapasztalatom alapján a kritikus 
 hibák korai azonosítása és a preventív intézkedések bevezetése jelentősen csökkentette a rendszer működési kockázatát.
 
@@ -87,7 +82,7 @@ hibák korai azonosítása és a preventív intézkedések bevezetése jelentős
 A közepes prioritású kockázatok a felhasználói élményt és a riportok pontosságát érintették. 
 A szakirodalom kiemeli, hogy ezek a problémák bár nem veszélyeztetik közvetlenül a rendszer működését, 
 hosszú távon befolyásolhatják az elfogadást és a felhasználói elégedettséget \cite{Hajdu2014,Kovacs2016}. 
-Saját értékelésem szerint ezeknek a hibáknak a folyamatos monitorozása és iteratív javítása lehetővé tette 
+Megítélésem szerint ezeknek a hibáknak a folyamatos monitorozása és iteratív javítása lehetővé tette 
 a felhasználói élmény optimalizálását anélkül, hogy a kritikus funkciókat veszélyeztettük volna.
 
 \begin{itemize}
@@ -97,49 +92,39 @@ a felhasználói élmény optimalizálását anélkül, hogy a kritikus funkció
 Az alacsony prioritású kockázatok elsősorban a rendszer megjelenését vagy a jövőbeli fejlesztések 
 ütemezését érintették. A szakirodalom hangsúlyozza, hogy ezek a kockázatok ugyan kevésbé sürgetők, 
 de hosszú távon hozzájárulnak a rendszer karbantarthatóságához és a fejlesztési terv fenntarthatóságához \cite{Szalay2018,Kaposi2019}. 
-Saját tapasztalatom alapján az alacsony prioritású problémák nyomon követése lehetővé tette, hogy 
+Általam szerzett tapasztalatok alapján az alacsony prioritású problémák nyomon követése lehetővé tette, hogy 
 a projekt fókusza a kritikus funkciók biztosításán maradjon, miközben a jövőbeli bővítések előkészítése is folyamatban volt.
-
-Összességében a kockázatok azonosítása és priorizálása lehetővé tette, hogy a projekt során először 
-a legkritikusabb problémákra koncentráljak, ezáltal a rendszer stabilitása és funkcionalitása biztosított volt. 
-A strukturált kockázatmenedzsment alkalmazása és a folyamatos monitorozás a magyar szakirodalom szerint 
-elengedhetetlen a sikeres projektvégrehajtáshoz \cite{Hajdu2014,Kovacs2016,Szalay2018,Kaposi2019}.
-
 
 %----------------------------------------------------------------------------
 \section{Megoldási stratégiák}
 %----------------------------------------------------------------------------
 
 A felmerült problémák kezelése során a cél a rendszer stabilitásának, funkcionalitásának és a projekt határidőinek biztosítása volt. 
-A szakirodalom hangsúlyozza, hogy a problémákra alkalmazott stratégiák strukturáltsága és 
+A problémákra alkalmazott stratégiák strukturáltsága és 
 következetessége jelentősen befolyásolja a projekt sikerét \cite{Hajdu2014,Szalay2018,Kaposi2019}.
 
 A technológiai problémák, különösen a Docker-konténerek és a PHP/Twig környezet konfigurációja 
-kezdetben instabilitást okoztak, ami futtatási hibákhoz vezetett. A szakirodalom szerint az iteratív 
+kezdetben instabilitást okoztak, ami futtatási hibákhoz vezetett. Az iteratív 
 finomhangolás és a rendszeres tesztelés kulcsfontosságú a szoftver stabilitásának biztosításához \cite{Kovacs2016}. 
-Saját tapasztalatom alapján a konfigurációk fokozatos javítása, a hibák dokumentálása és a rendszeres tesztkörök alkalmazása jelentősen csökkentette a technikai kockázatot.
+A konfigurációk fokozatos javítása, a hibák dokumentálása és a rendszeres tesztkörök alkalmazása jelentősen csökkentette a technikai kockázatot.
 
 A funkcionális kihívások, például a bérléskezelési modulok pontos leképezése a szoftverben, szintén komoly figyelmet igényeltek. 
-A szakirodalom kiemeli, hogy a komplex üzleti folyamatok modellezése iteratív tesztelés és 
+A komplex üzleti folyamatok modellezése iteratív tesztelés és 
 visszacsatolás nélkül gyakran vezet félreértésekhez és hibákhoz \cite{Szalay2018,Kaposi2019}. 
-Saját értékelésem szerint a moduláris fejlesztés és az ismételt tesztelés lehetővé tette, hogy 
+A moduláris fejlesztés és az ismételt tesztelés lehetővé tette, hogy 
 a rendszer logikája a vállalati igényekhez igazodjon, miközben a hibák gyorsan lokalizálhatók és javíthatók voltak.
 
 Az időmenedzsment kritikus tényező volt, mivel a projektet egyedül végeztem. 
 A napi és heti ütemtervek készítése, valamint a feladatok priorizálása lehetővé tette a munka és a projekt előrehaladásának kiegyensúlyozását. 
-A magyar szakirodalom szerint az időbeosztás és a feladatpriorizálás kulcsfontosságú a 
+Az időbeosztás és a feladatpriorizálás kulcsfontosságú a 
 projekt határidőn belüli teljesítéséhez és a kiégés elkerüléséhez \cite{Kovacs2016,Hajdu2014}. 
-Saját tapasztalatom szerint a tervezett és dokumentált ütemezés hozzájárult a hatékony munkavégzéshez és a stressz csökkentéséhez.
+A tervezett és dokumentált ütemezés hozzájárult a hatékony munkavégzéshez és a stressz csökkentéséhez.
 
 A tesztelés és hibajavítás terén a moduláris stratégia alkalmazása biztosította, 
 hogy minden komponens külön-külön ellenőrzésen essen át, majd a teljes rendszer integrációját is alaposan teszteltem. 
-A szakirodalom hangsúlyozza a folyamatos integráció és a moduláris tesztelés szerepét 
+A folyamatos integráció és a moduláris tesztelés szerepét 
 a hibák korai felismerésében és a rendszer megbízhatóságának növelésében \cite{Szalay2018,Kaposi2019}. 
-Saját értékelésem szerint ez a megközelítés lehetővé tette a hibák gyors javítását és a stabil rendszer kialakítását, minimalizálva a későbbi problémákat.
-
-Összességében a problémák kezelésére alkalmazott stratégiai megközelítés biztosította a projekt sikeres előrehaladását, 
-miközben a rendszer stabil, funkcionális és a vállalat igényeinek megfelelő maradt.
-
+A megközelítés lehetővé tette a hibák gyors javítását és a stabil rendszer kialakítását, minimalizálva a későbbi problémákat.
 
 %----------------------------------------------------------------------------
 \section{Tanulságok a kockázatkezelésből}
@@ -152,7 +137,7 @@ Az előzetesen kialakított kockázatmátrix segített azonosítani a legkritiku
 így a figyelmet a legfontosabb problémákra tudtam összpontosítani, miközben a kisebb kockázatok későbbi kezelésre vártak.
 
 A rendszeres tesztelés és a dokumentáció készítése szintén kulcsfontosságú volt. 
-A szakirodalom hangsúlyozza, hogy a moduláris tesztelés, az iteratív javítások és a 
+A moduláris tesztelés, az iteratív javítások és a 
 részletes dokumentáció lehetővé teszik a hibák gyors felismerését és hatékony javítását, 
 ami jelentősen csökkenti a rendszerhibák előfordulását \cite{Kaposi2019,Szalay2018}. 
 Saját tapasztalatom szerint a folyamatos tesztelés és dokumentáció nemcsak a rendszer 
@@ -162,7 +147,3 @@ Az időmenedzsment és a feladatpriorizálás szintén kiemelt jelentőségűnek
 Az önálló fejlesztés során a napi és heti ütemtervek, valamint a feladatok rangsorolása 
 lehetővé tette a projekt folyamatos előrehaladását anélkül, hogy a munkavégzés minősége vagy a határidők veszélybe kerültek volna \cite{Kovacs2016,Hajdu2014}. 
 Saját értékelésem szerint a strukturált időbeosztás és a fókuszált feladatvégzés elengedhetetlen a sikeres, önálló projektvégrehajtáshoz.
-
-Összességében a kockázatkezelés alkalmazása nemcsak a rendszer megbízhatóságát és 
-funkcionalitását biztosította, hanem hozzájárult a projekt menedzsmenti tapasztalatok megszerzéséhez is. 
-A megszerzett tanulságok alapján a jövőbeli projektek során a kockázatkezelés tudatos, iteratív és folyamatos alkalmazása elengedhetetlen a hatékony és eredményes fejlesztéshez.
