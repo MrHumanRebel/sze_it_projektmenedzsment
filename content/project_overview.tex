@@ -63,7 +63,7 @@ A rendszer fejlesztése a következő technológiákra épült:
 %----------------------------------------------------------------------------
 \subsection{Bejelentkezés}
 %----------------------------------------------------------------------------
-A Bejelentkezési felület lehetővé teszi a felhasználók számára, hogy biztonságosan hozzáférjenek a rendszerhez.
+A bejelentkezési felület biztosítja, hogy a felhasználók biztonságosan és ellenőrzött módon férjenek hozzá a rendszerhez.
 Ezt megtehetik helyi fiókkal vagy Google OAuth2 hitelesítéssel, amely egyszerűsíti a bejelentkezési folyamatot és növeli a biztonságot.
 A bejelentkezés után amennyiben új felhasználó lép be a rendszerbe, egy egyszeri csatlakozó jelszó megadására van szükség amivel kapcsolódik a vállalathoz,
 ezzel biztosítva, hogy csak jogosult személyek férjenek hozzá a rendszerhez, és minden tevékenység naplózásra kerül a későbbi ellenőrzés érdekében.
@@ -156,7 +156,7 @@ A szűrési lehetőségek a következők:
 
 \begin{itemize}
     \item \textbf{Kulcsszó alapú keresés:} akár részleges egyezés alapján is szűr a név, címke vagy gyártó szerint.
-    \item \textbf{Csoport és kategória szerinti szűrés:} lehetővé teszi, hogy csak adott projekt-típushoz vagy technikai kategóriához tartozó eszközök jelenjenek meg.
+    \item \textbf{Csoport és kategória szerinti szűrés:} csak adott projekt-típushoz vagy technikai kategóriához tartozó eszközök jelenjenek meg.
     \item \textbf{Projekt szerinti rendezés:} megjeleníthetők kizárólag egy adott eseményhez, produkcióhoz vagy ügyfélhez rendelt eszközök.
     \item \textbf{Vállalkozás szűrő:} a különböző alvállalkozókhoz tartozó eszközök elkülönített kezelése.
     \item \textbf{Előre beállított nézetek:} lehetőség van archivált eszközök megjelenítésére, képek elrejtésére vagy a készleten nem elérhető tételek kiszűrésére.
@@ -242,7 +242,7 @@ hiszen minden lépés dokumentált és ellenőrizhető marad.
 %----------------------------------------------------------------------------
 
 A verziókezelés és a biztonságos hálózati hozzáférés is kiemelt szerepet kapott a projekt során.  
-A projekt forráskódja a \textbf{GitHub} platformon található, amely lehetővé teszi a verziók követését, a biztonsági mentések készítését és a folyamatos fejlesztést.  
+A projekt forráskódja a \textbf{GitHub} platformon található, amely által elérhető a verziók követése, a biztonsági mentések készítése és a folyamatos fejlesztés.  
 A GitHub használata növeli a fejlesztési folyamat átláthatóságát, támogatja a csapatmunkát, és biztosítja a kód minőségének megőrzését.
 
 A fejlesztés egy főágon (\texttt{main branch}) zajlik, ehhez a lokális környezetből \texttt{git push/pull} műveletekkel történik a szinkronizálás.  
@@ -263,7 +263,7 @@ A reverse proxy réteg \textbf{NGINX} alapokon működik, amely:
 \end{itemize}
 
 A proxy réteg nemcsak hálózati védelmet nyújt, hanem támogatja a fejlesztés és üzemeltetés szétválasztását is.  
-A GitHub repository tartalmazza a \texttt{docker-compose.yml} és \texttt{nginx.conf} fájlokat, amelyek lehetővé teszik a rendszer gyors telepítését bármely környezetben — fejlesztői, teszt vagy éles szerveren — egyetlen parancs segítségével.
+A GitHub repository tartalmazza a \texttt{docker-compose.yml} és \texttt{nginx.conf} fájlokat, amelyek segítik a rendszer gyors telepítését bármely környezetben — fejlesztői, teszt vagy éles szerveren — egyetlen parancs segítségével.
 
 Ez az architektúra a modern \textbf{DevOps-elvek} alapján működik, ahol a fejlesztés, verziókezelés, biztonság és üzemeltetés integrált egységet alkot.  
 A GitHub–Docker–NGINX kombináció garantálja a kód stabilitását, az infrastruktúra rugalmasságát és az adatbiztonságot, ami alapvető követelmény egy vállalati szintű rendszer esetében.
