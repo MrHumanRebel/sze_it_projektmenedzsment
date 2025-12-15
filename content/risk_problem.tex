@@ -9,9 +9,9 @@ A kockázatkezelést már a projektindításkor rendszerbe szerveztem, mert egys
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{p{4cm} p{2cm} p{2cm} p{5cm}}
+    \begin{tabular}{@{}p{4cm} p{2cm} p{2cm} p{5cm}@{}}
         \toprule
-        \textbf{Kockázat} & \textbf{Valószínűség} & \textbf{Hatás} & \textbf{Válasz}\
+        \textbf{Kockázat} & \textbf{Valószínűség} & \textbf{Hatás} & \textbf{Válasz}\\
         \midrule
         Docker/Nginx konfigurációs hiba & Közepes & Magas & Előre összeállított Compose profilok, automatikus healthcheck-ek, rollback script.\\
         Adatvesztés vagy sérülés & Alacsony & Magas & Napi dump cron, verziózott migrációk, tesztadatbázis bevezetése.\\
