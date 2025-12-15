@@ -12,13 +12,6 @@ A kiinduló pont az igényfelmérés és a scope definiálása volt. A vállalat
 
 Az ütemezést Gantt-szerkezetben készítettem el: igényértelmezés (2 hét), architektúra-terv (2 hét), modulfejlesztés (16 hét), integrációs teszt (4 hét), bevezetés (2 hét). A mérföldkövekhez konkrét átadási tételeket rendeltem, hogy a controlling szakaszban objektív mérőpontok legyenek \cite{Hajdu2014}. Az erőforrás-terv az önálló fejlesztés miatt heti 25 munkaórával számolt, és tartalékidőt is tartalmazott a kockázatos modulokra (auth, jogosultság, riportok) \cite{Szalay2018}. A kockázatok előzetes feltárását kockázatmátrixba rögzítettem, amely a valószínűség-hatás párok alapján priorizált.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=70mm, keepaspectratio]{figures/plan.png}
-    \caption{Fő mérföldkövek időterve. \footnotesize Forrás: saját kép}
-    \label{fig:plan}
-\end{figure}
-
 \section{Megvalósítás}
 
 A fejlesztés moduláris architektúrán alapult (auth, dashboard, eszközkezelés, projektek, riportok), ami lehetővé tette a párhuzamos, de kontrollált fejlesztést. A Git-flow szerinti ágkezelés és a konténerizált környezet biztosította, hogy minden módosítás reprodukálható legyen \cite{Kovacs2016}. A backend és frontend komponenseket iteratív sprintekben szállítottam: minden sprint végén működő, tesztelt modul készült, így a projekt több alkalommal produkált használható verziót, ahogy az iteratív modellek ajánlják \cite{Kaposi2019}.
