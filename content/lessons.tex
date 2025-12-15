@@ -2,57 +2,27 @@
 \chapter{\lessons}
 %----------------------------------------------------------------------------
 
-A \textbf{TeDeRMS} projekt nem csupán egy vállalati bérléskezelő rendszer létrehozását jelentette, 
-hanem egy teljesen önálló projektmenedzsment gyakorlatot is. 
-A fejlesztés során szerzett tapasztalatok világosan megmutatták, hogy a siker kulcsa a tudatos tervezés, 
-a kockázatok proaktív kezelése és a moduláris, skálázható fejlesztési megközelítés.
+A TeDeRMS projekt során szerzett tapasztalatok bemutatják, hogyan kapcsolható össze a projektmenedzsment elmélet és a vállalati gyakorlat.
 
-%----------------------------------------------------------------------------
-\section{Projektmenedzsment tapasztalatok}
-%----------------------------------------------------------------------------
+\section{Projektmenedzsment tanulságok}
 
-A projekt során szerzett tapasztalataim alapján a részletes tervezés és az ütemezés kulcsfontosságú volt
-az önálló fejlesztés sikeréhez. A mérföldkövek alkalmazása segített abban, hogy a kritikus feladatokra 
-mindig a megfelelő időben tudjak reagálni és ne veszítsem el a fókuszt a rendszer stabil és annak hibamentes működése alatt. 
-Saját tapasztalatom szerint, ha a feladatokat nem a mérföldkövekhez igazítom akkor gyakran előfordult volna, 
-hogy a kisebb, kevésbé fontos részletek lekötik az időmet és az energiámat, ennek hatására a projekt határideje veszélybe kerülhetett.
+\begin{itemize}
+    \item \textbf{Célok és mérföldkövek:} a mérhető mérföldkövek (auth, eszközmodul, riportok) folyamatos visszajelzést adtak, és csökkentették a scope-kúszás kockázatát \cite{Hajdu2014}.
+    \item \textbf{Rendszeres monitorozás:} a heti státusz-összefoglalók segítették a becslések kalibrálását, a kockázatos feladatokat pedig előrehozták a következő sprintekbe \cite{Szalay2018}.
+    \item \textbf{Stakeholder bevonás:} a kulcsfelhasználókkal tartott demók biztosították, hogy az elméleti követelmények (RACI, felelősségi körök) valódi működési folyamatokká váljanak \cite{Kaposi2019}.
+\end{itemize}
 
-A kockázatok előrejelzése és azok figyelése rendkívül hasznosnak bizonyultak. A projekt során a kritikus problémákat 
-igyekeztem még a bekövetkezésük előtt felismerni, így minimalizálni tudtam az előre nem látható akadályok okozta fennakadásokat. 
-Ez a proaktív megközelítés nemcsak a projekt menetét tette gördülékenyebbé, hanem 
-a saját döntéshozatali képességemet is fejlesztette, hiszen mindig tisztában voltam a legfontosabb teendőkkel és a várható kihívásokkal.
+\section{Fejlesztési és technológiai tapasztalatok}
 
-Az önálló erőforrás-menedzsment terén az idő és az eszközök tudatos optimalizálása 
-vált a siker egyik kulcstényezőjévé. A napi és heti ütemtervek betartása, valamint a 
-feladatok rangsorolása biztosította, hogy a projekt folyamatosan haladjon, anélkül hogy 
-túlterhelt vagy demotivált legyek. Ebből a szempontból úgy érzem, hogy a projekt 
-nem csupán a technikai készségeimet, hanem a saját felelősségvállalásomat és az önálló munkavégzési képességeimet is jelentősen fejlesztette.
+\begin{itemize}
+    \item \textbf{Modularitás:} az önállóan fejlesztett modulok (auth, eszközkezelés, projektek) külön tesztkörnyezetet kaptak, ami gyors hibakeresést tett lehetővé és csökkentette a regressziókat \cite{Kovacs2016}.
+    \item \textbf{Konténerizálás:} a Docker alapú környezet minimalizálta a „működik a gépemen” típusú problémákat, és biztosította a reprodukálható bevezetést \cite{Szalay2018}.
+    \item \textbf{Dokumentáció:} a rendszer- és üzemeltetési dokumentáció elkészítése megfelelt a lezárási fázis tudásmegosztási elvárásainak, és a pilot után finomítottam őket a felhasználói visszajelzések alapján \cite{Hajdu2014}.
+\end{itemize}
 
-%----------------------------------------------------------------------------
-\section{Fejlesztési és technológiai tanulságok}
-%----------------------------------------------------------------------------
-
-A projekt során szerzett tapasztalataim alapján a moduláris és skálázható architektúra kialakítása kulcsfontosságú volt. 
-A rendszer moduláris felépítése lehetővé tette, hogy a különböző funkcionális egységeket egymástól függetlenül fejlesszem, 
-teszteljem és javítsam, ami jelentősen gyorsította a hibajavítási folyamatokat, és könnyebbé tette a későbbi bővítéseket. 
-Tapasztalatom szerint ez a rugalmasság nem csupán a fejlesztői munka hatékonyságát növelte, hanem hosszú távon a vállalat igényeinek kiszolgálását is biztosítja.
-
-A folyamatos tesztelés és a részletes dokumentáció szintén meghatározó tényezőnek bizonyult. 
-A moduláris tesztelési stratégia megteremtette a lehetőségét, hogy a hibákat gyorsan lokalizáljam és javítsam, 
-miközben a rendszer teljes integritása megőrződött. A dokumentáció elkészítése nem csupán a rendszer 
-áttekinthetőségét segítette, hanem a felhasználók számára is könnyebbé tette az eligazodást, ami a rendszer elfogadottságát és a hatékony működést növelte.
-
-A technológiai integráció terén a PHP/Twig backend és a Docker alapú konténerizálás kombinációja 
-jelentős előnyöket biztosított. A konténerizált környezet stabilitást és rugalmasságot biztosított, 
-miközben a rendszer telepítése és frissítése gyorsan elvégezhető volt. Saját tapasztalatom szerint 
-ez a megoldás csökkentette a konfigurációs problémák és futtatási hibák előfordulását, 
-valamint biztosította a feltételeit, hogy a vállalat az új rendszert azonnal, biztonságosan és hatékonyan használja.
-
-%----------------------------------------------------------------------------
 \begin{figure}[H]
     \centering
     \includegraphics[width=80mm, keepaspectratio]{figures/devops.png}
-    \caption{DevOps szemlélet a projektben}
+    \caption{A DevOps szemlélet szerepe a projektben. \footnotesize Forrás: saját szerkesztés, projekt tapasztalatok alapján}
     \label{fig:devops}
 \end{figure}
-%-----------------------------------------------------------------------------
