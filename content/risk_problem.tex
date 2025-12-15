@@ -1,156 +1,42 @@
 %----------------------------------------------------------------------------
 \chapter{\riskproblem}
-%---------------------------------------------------------------------------- 
-
-A \textbf{TeDeRMS} projekt során a kockázatkezelés meghatározó szerepet játszott, 
-mivel a projekt önálló fejlesztésként valósult meg, így minden döntés és probléma gyors és hatékony kezelést igényelt. 
-A kockázatkezelés célja a potenciális problémák előrejelzése, azok hatásának minimalizálása, 
-valamint a projekt sikerének biztosítása volt.
-
-%----------------------------------------------------------------------------
-\section{Felmerült problémák}
 %----------------------------------------------------------------------------
 
-A fejlesztés során számos kihívással és nehézséggel szembesültem, amelyek hatékony kezelése elengedhetetlen volt a projekt sikeres megvalósításához, 
-valamint a rendszer megbízható és teljes funkcionalitásának biztosításához.
-A tapasztalatok alapján megfigyelhető, hogy a projektmenedzsment klasszikus fázisai jól előre jelzik a 
-problémák jellegét, de a gyakorlatban gyakran szükség van rugalmasságra és kreatív megoldásokra is \cite{Hajdu2014,Szalay2018}.
+A kockázatkezelést már a projektindításkor rendszerbe szerveztem, mert egyszemélyes fejlesztésnél minden késedelem közvetlenül az átfutási időt veszélyezteti \cite{Hajdu2014}. A kockázatmátrixot a szakirodalom javaslatai szerint a valószínűség és hatás alapján töltöttem ki, majd minden tételhez megelőző és reagáló intézkedést rendeltem \cite{Kovacs2016,Kaposi2019}.
 
-%----------------------------------------------------------------------------
-\subsection{Technológiai problémák}
-%----------------------------------------------------------------------------
-A rendszer stabilitása és a Docker-konténerek kezdeti konfigurációja nem volt optimális, ami futtatási hibákhoz vezetett.
-Ez a probléma rámutatott arra, hogy a modern szoftverfejlesztési környezetekben a technológiai infrastruktúra 
-optimalizálása legalább olyan fontos, mint a szoftver logikájának megtervezése. 
-A stabil technológiai alap kritikus a rendszer megbízhatósága szempontjából, 
-és a kezdeti hibák megfelelő dokumentációval és iteratív konfigurálással kezelhetők \cite{Kovacs2016,Kaposi2019}. 
-Az ilyen problémák korai felismerése jelentősen csökkentette a későbbi üzemeltetési nehézségeket.
+\section{Főbb kockázatok és válaszok}
 
-%----------------------------------------------------------------------------
-\subsection{Funkcionális kihívások}
-%----------------------------------------------------------------------------
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{p{4cm} p{2cm} p{2cm} p{5cm}}
+        \toprule
+        \textbf{Kockázat} & \textbf{Valószínűség} & \textbf{Hatás} & \textbf{Válasz}\
+        \midrule
+        Docker/Nginx konfigurációs hiba & Közepes & Magas & Előre összeállított Compose profilok, automatikus healthcheck-ek, rollback script.\\
+        Adatvesztés vagy sérülés & Alacsony & Magas & Napi dump cron, verziózott migrációk, tesztadatbázis bevezetése.\\
+        Funkcionális félreértelmezés (bérlés státuszok) & Közepes & Közepes & Részletes use case leírások, prototípus-demó minden sprint végén.\\
+        Időcsúszás az önálló fejlesztés miatt & Magas & Közepes & Heti 25 órás keret, buffer a kockázatos modulokra, scope-fagyasztás a 3. sprint után.\\
+        Jogosultsági hibák vagy jogosulatlan hozzáférés & Alacsony & Magas & Role-based access control, kötelező audit log, automatizált belépési tesztek.\\
+        Teljesítmény problémák nagy eszközlistán & Közepes & Közepes & Indexelt adatbázis mezők, lapozás és gyorsszűrés beépítése, célzott terheléses tesztek.\\
+        Külső szolgáltatás (Google OAuth) elérhetetlensége & Alacsony & Közepes & Lokális fiók fallback, auth endpoint monitoring, riasztás beállítása.\\
+        \bottomrule
+    \end{tabular}
+    \caption{Kockázatkezelési mátrix a TeDeRMS projekthez. \footnotesize Forrás: saját szerkesztés, projekt dokumentáció}
+    \label{tab:risk_matrix}
+\end{table}
 
-A bérléskezelési folyamatok pontos leképezése a szoftverben komoly kihívást jelentett, különösen a különböző státuszok és jogosultságok kezelése során.  
-A funkcionalitás implementálása során világossá vált, hogy a vállalati folyamatok összetettsége gyakran túlmutat a papíron megadott szabályokon.  
+\section{Problémák kezelése a gyakorlatban}
 
-A rendszertervezés során a folyamatok részletes feltérképezése és a valós működés elemzése fontos a hibák minimalizálásához.  
-Megfigyelésem alapján a moduláris architektúra alkalmazása és a folyamatok iteratív tesztelése kell a pontos implementáció eléréséhez, biztosítva, hogy a rendszer a vállalat tényleges igényeit hűen tükrözze.
+\textbf{Technológiai kockázatok:} a konténerindításkor jelentkező hibákra automatizált ellenőrző szkripteket írtam, így a futási problémák már a fejlesztői környezetben feltűntek. Ez összhangban van a megelőző kontrollokra építő ajánlással \cite{Szalay2018}.
 
-%----------------------------------------------------------------------------
-\subsection{Időmenedzsment}
-%----------------------------------------------------------------------------
+\textbf{Funkcionális eltérések:} a bérlés státuszmátrixa többször pontosításra szorult. Minden módosítás után rövid használhatósági tesztet futtattam a vállalat kulcsfelhasználóival, és az eredményeket jegyzőkönyvben rögzítettem.
 
-Az önálló projektvégzés során különösen nehéz volt összehangolni a napi feladatokat a projekt folyamatos előrehaladásával.
-Az időmenedzsment kérdése kiemelten fontos volt, mivel a korlátozott erőforrások és a napi feladatok összehangolása 
-folyamatos priorizálást igényelt. A projekt időbeli koordinációja, 
-a mérföldkövek betartása és a személyes produktivitás optimalizálása kritikus tényezők az önálló fejlesztések során \cite{Kaposi2019,Kovacs2016}. 
-Értékelésem alapján a heti tervezés és a feladatok rendszeres felülvizsgálata segített a haladás fenntartásában.
+\textbf{Idő- és erőforráskockázat:} ha a tényleges ráfordítás meghaladta a tervezettet, a következő sprintben kevesebb új funkciót vállaltam, és a hibajavításra fókuszáltam. A módszer megfelelt a szakirodalomban javasolt gördülő tervezésnek \cite{Kaposi2019}.
 
-%----------------------------------------------------------------------------
-\subsection{Tesztelés és hibajavítás}
-%----------------------------------------------------------------------------
-
-A rendszer moduláris felépítése miatt a hibák lokalizálása és javítása több iterációt igényelt.
-A hibák azonosítása és javítása a moduláris felépítés miatt komplex feladat volt, mivel egy-egy modul problémája 
-láncreakcióként hatott a rendszer más részeire. A folyamatos unit- és integrációs 
-tesztelés, valamint a hibák dokumentálása és visszacsatolása alapvető a projekt stabilitása szempontjából \cite{Hajdu2014,Szalay2018}. 
-Személyes tapasztalatom szerint az iteratív hibajavítás és a részletes tesztelési protokollok alkalmazása biztosította 
-a moduláris rendszer hatékony működését, miközben a megszerzett módszerek későbbi projektekben is hasznosíthatók
-%----------------------------------------------------------------------------
-\section{Kockázatok azonosítása és priorizálása}
-%----------------------------------------------------------------------------
-
-A projekt kezdeti fázisában kiemelten fontos volt a potenciális problémák előrejelzése és kezelése, 
-mivel a kockázatok megfelelő azonosítása és priorizálása közvetlen hatással van a projekt sikerére 
-és a rendszer minőségére. A kockázatmenedzsment alapja a kockázatok strukturált feltérképezése, 
-az értékelésük és a megfelelő megelőző intézkedések kialakítása \cite{Hajdu2014,Szalay2018,Kovacs2016}.
-
-%----------------------------------------------------------------------------
-\subsection{Magas prioritású kockázatok}
-%----------------------------------------------------------------------------
-
-A magas prioritású kockázatok közé tartoznak a kritikus hibák a backend működésében, az adatvesztés és a biztonsági hiányosságok.  
-Ezek a problémák a rendszer alapvető működését fenyegették, ezért azonnali figyelmet igényeltek.  
-A magas prioritású problémák kezelése kulcsfontosságú a rendszer stabilitásának és megbízhatóságának biztosításához \cite{Kaposi2019,Szalay2018}.  
-A kritikus hibák korai azonosítása és a preventív intézkedések bevezetése jelentősen csökkentette 
-a rendszer működési kockázatát, és elősegítette a fejlesztés zavartalan folytatását.
-
-%----------------------------------------------------------------------------
-\subsection{Közepes prioritású kockázatok}
-%----------------------------------------------------------------------------
-
-A közepes prioritású kockázatok a felhasználói felület hibáit és a riportok pontosságát érintették.  
-Bár ezek nem veszélyeztetik közvetlenül a rendszer alapvető működését, hosszú távon befolyásolhatják 
-a felhasználói élményt és az elfogadottságot \cite{Hajdu2014,Kovacs2016}.  
-Megítélésem szerint a közepes prioritású problémák folyamatos monitorozása és iteratív javítása hozzájárult a felhasználói élmény optimalizálásához, 
-anélkül, hogy a kritikus funkciókat veszélyeztettük volna
-%----------------------------------------------------------------------------
-\subsection{Alacsony prioritású kockázatok}
-%----------------------------------------------------------------------------
-
-Az alacsony prioritású kockázatok főként a rendszer megjelenését vagy a jövőbeli bővítési igényeket érintették.  
-Bár ezek kevésbé sürgetők, hosszú távon hozzájárulnak a rendszer karbantarthatóságához és a fejlesztési terv fenntarthatóságához \cite{Szalay2018,Kaposi2019}.  
-Általam szerzett tapasztalatok alapján az alacsony prioritású problémák nyomon követése támogatta, 
-hogy a projekt fókusza a kritikus funkciók biztosításán maradjon, miközben a jövőbeli bővítések előkészítése is folyamatban volt.
-
-%----------------------------------------------------------------------------
-\section{Megoldási stratégiák}
-%----------------------------------------------------------------------------
-
-A felmerült problémák kezelése során a cél a rendszer stabilitásának, funkcionalitásának és a projekt határidőinek biztosítása volt. 
-A problémákra alkalmazott stratégiák strukturáltsága és 
-következetessége jelentősen befolyásolja a projekt sikerét \cite{Hajdu2014,Szalay2018,Kaposi2019}.
-
-A technológiai problémák, különösen a Docker-konténerek és a PHP/Twig környezet konfigurációja 
-kezdetben instabilitást okoztak, ami futtatási hibákhoz vezetett. Az iteratív 
-finomhangolás és a rendszeres tesztelés kulcsfontosságú a szoftver stabilitásának biztosításához \cite{Kovacs2016}. 
-A konfigurációk fokozatos javítása, a hibák dokumentálása és a rendszeres tesztkörök alkalmazása jelentősen csökkentette a technikai kockázatot.
-
-A funkcionális kihívások, például a bérléskezelési modulok pontos leképezése a szoftverben, szintén komoly figyelmet igényeltek. 
-A komplex üzleti folyamatok modellezése iteratív tesztelés és 
-visszacsatolás nélkül gyakran vezet félreértésekhez és hibákhoz \cite{Szalay2018,Kaposi2019}. 
-A moduláris fejlesztés és az ismételt tesztelés adott lehetőséget, hogy 
-a rendszer logikája a vállalati igényekhez igazodjon, miközben a hibák gyorsan lokalizálhatók és javíthatók voltak.
-
-Az időmenedzsment kritikus tényező volt, mivel a projektet egyedül végeztem. 
-A napi és heti ütemtervek kialakítása, valamint a feladatok rangsorolása segítette a munka és a projekt előrehaladásának egyensúlyban tartását.
-Az időbeosztás és a feladatpriorizálás kulcsfontosságú a 
-projekt határidőn belüli teljesítéséhez és a kiégés elkerüléséhez \cite{Kovacs2016,Hajdu2014}. 
-A tervezett és dokumentált ütemezés hozzájárult a hatékony munkavégzéshez és a stressz csökkentéséhez.
-
-A tesztelés és hibajavítás terén a moduláris stratégia alkalmazása biztosította, 
-hogy minden komponens külön-külön ellenőrzésen essen át, majd a teljes rendszer integrációját is alaposan teszteltem. 
-A folyamatos integráció és a moduláris tesztelés szerepét 
-a hibák korai felismerésében és a rendszer megbízhatóságának növelésében \cite{Szalay2018,Kaposi2019}. 
-\begin{comment}
-%----------------------------------------------------------------------------
-\section{Tanulságok a kockázatkezelésből}
-%----------------------------------------------------------------------------
-
-A projekt során szerzett tapasztalatok egyértelműen alátámasztották, hogy a kockázatok előrejelzése 
-és kezelése alapvető fontosságú az önálló fejlesztések sikeréhez.  
-Az előzetesen kialakított kockázatmátrix biztosította a legkritikusabb problémák azonosítását, 
-így a figyelmet a rendszer stabilitását leginkább veszélyeztető területekre tudtam összpontosítani, 
-miközben a kisebb kockázatok kezelését későbbre halaszthattam.  
-
-A rendszeres tesztelés és részletes dokumentáció elősegítette a hibák gyors felismerését és 
-javítását, növelte a fejlesztés átláthatóságát, valamint támogatta a későbbi bővítések gördülékeny megvalósítását.  
-A moduláris tesztelési stratégia és az iteratív javítások kombinációja biztosította, hogy a 
-rendszer megbízhatóan működjön, miközben a fejlesztési folyamat hatékonyan szervezett maradt.
-
-Az időmenedzsment és a feladatpriorizálás kulcsfontosságú tényezőnek bizonyult a projekt folyamatos előrehaladásában.  
-A napi és heti ütemtervek, valamint a rangsorolt feladatlista lehetővé tették, hogy a projekt 
-haladása ne veszélyeztesse a munkavégzés minőségét és a határidők betartását.  
-A strukturált időbeosztás és a fókuszált munkavégzés döntő jelentőségű a sikeres, önálló fejlesztéshez.
-\end{comment}
-
-%----------------------------------------------------------------------------
 \begin{figure}[H]
     \centering
-    \includegraphics[width=70mm, keepaspectratio]{figures/problem.jpg}
-    \caption{Problémamegoldás vizualizáció}
+    \includegraphics[width=80mm, keepaspectratio]{figures/problem.jpg}
+    \caption{Problémamegoldási folyamat vizualizációja. \footnotesize Forrás: saját szerkesztés, projekt dokumentáció}
     \label{fig:problem_solving}
 \end{figure}
-%----------------------------------------------------------------------------
-
-
